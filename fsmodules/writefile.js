@@ -25,7 +25,6 @@ fs.readFile('fsmodules/example.txt',((err,data)=>{
 
 
 
-
 //  fs.writeFile('fsmodules/example.txt',"hello",(err=>{
 //     if(err){
 //         console.log('error found',err);
@@ -33,3 +32,4 @@ fs.readFile('fsmodules/example.txt',((err,data)=>{
 //         console.log('file created');
 //     }
 //  }))
+

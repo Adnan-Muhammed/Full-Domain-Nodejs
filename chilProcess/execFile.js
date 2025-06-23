@@ -7,7 +7,6 @@ const path = require('path');
 
 // const notepadPath = 'C:\\Windows\\System32\\notepad.exe';  // Path to Notepad on Windows
 // const filePath = 'C:\\Users\\ADNAN MUHAMMED\\OneDrive\\Documents\\Full_Domain_nodejs\\folder\\file.txt';  // Full path to the text file
-// const filePath = 'C:\\Users\\ADNAN MUHAMMED\\OneDrive\\Documents\\Full_Domain_nodejs\\folder\\file.txt';  // Full path to the text file
 
 
 // const filePath = path.join(__dirname,"/")
@@ -43,25 +42,26 @@ const path = require('path');
 // });
 
 
-// // Define the path to the notepad executable and example2.txt
-// const notepadPath = 'C:\\Windows\\System32\\notepad.exe';  // Ensure this is the correct path on your system
+// Define the path to the notepad executable and example2.txt
+const notepadPath = 'C:\\Windows\\System32\\notepad.exe';  // Ensure this is the correct path on your system
+const filePath = 'C:\\Users\\ADNAN MUHAMMED\\OneDrive\\Documents\\Full_Domain_nodejs\\folder\\file.txt';  // Full path to the text file
 
-// // Use execFile to open example2.txt with Notepad
-// execFile(notepadPath, [filePath], (error, stdout, stderr) => {
-//   if (error) {
-//     console.error(`Error: ${error.message}`);
-//     return;
-//   }
-//   console.log('Notepad opened successfully.');
-// });
-
-
-// const { execFile } = require('child_process');
-
-execFile('node', ['-v'], (error, stdout, stderr) => {
+// Use execFile to open example2.txt with Notepad
+execFile(notepadPath, [filePath], (error, stdout, stderr) => {
   if (error) {
     console.error(`Error: ${error.message}`);
     return;
   }
-  console.log(`Node version: ${stdout}`);
+  console.log('Notepad opened successfully.');
 });
+
+
+// const { execFile } = require('child_process');
+
+// execFile('node', ['-v'], (error, stdout, stderr) => {
+//   if (error) {
+//     console.error(`Error: ${error.message}`);
+//     return;
+//   }
+//   console.log(`Node version: ${stdout}`);
+// });

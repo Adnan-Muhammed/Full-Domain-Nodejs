@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Define the file path and content
-const filePath = './example.txt';
+const filePath = './example3.txt';
 const content = 'Hello, this is a sample content!';
 
 // try {
@@ -17,10 +17,24 @@ const content = 'Hello, this is a sample content!';
 // Write the content to the file asynchronously
 
 
-fs.writeFile(filePath, content, (err) => {
-    if (err) {
-        console.error('Error writing file:', err);
-        return;
+
+
+// fs.writeFile(filePath, content, (err) => {
+//     if (err) {
+//         console.error('Error writing file:', err);
+//         return;
+//     }
+//     console.log('File written successfully!');
+// });
+
+
+const util = require('util')
+const writeFileAsync = util.promisify(fs.writeFile);
+
+(async()=>{
+    try{
+       const data = await writeFileAsync(filePath, content)
+    }catch(err){
+        console.log(err);
     }
-    console.log('File written successfully!');
-});
+})()
